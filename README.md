@@ -72,7 +72,7 @@ CREATES A SECOND, INDEPENDENT TIDY DATA SET WITH THE AVERAGE OF EACH VARIABLE FO
 3. Write data set (`TidyData.txt`) in the root project directory.
 
 
-`run_analysis.R` script uses R version 3.3.3 on Windows 8.1 64-bit edition.  
-The script requires the dplyr package (version 0.4.3).
+`run_analysis.R` script uses R version 3.3.3 on Windows 7 sp1 64-bit edition.  
+The script requires the dplyr package (version 0.5.0). 
 
 
