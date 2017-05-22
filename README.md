@@ -2,10 +2,9 @@
 title: "Getting and Cleaning Data Course Project"
 author: "Marco Marchetti"
 date: "21 May 2017"
-output: html_document
 ---
 
-Submission of the course project for the Johns Hopkins Getting and Cleaning Data course.  
+Project submission for the Getting and Cleaning Data course (Johns Hopkins).  
 The purpose of this project is to demonstrate the ability to collect, work with, and clean a data set. 
 
 ## Overview
@@ -73,7 +72,7 @@ CREATES A SECOND, INDEPENDENT TIDY DATA SET WITH THE AVERAGE OF EACH VARIABLE FO
 3. Write data set (`TidyData.txt`) in the root project directory.
 
 
-`run_analysis.R` script using R version 3.3.3 on Windows 8.1 64-bit edition.  
+`run_analysis.R` script uses R version 3.3.3 on Windows 8.1 64-bit edition.  
 The script requires the dplyr package (version 0.4.3).
 
 

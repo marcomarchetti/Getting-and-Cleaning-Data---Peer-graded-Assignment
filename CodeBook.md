@@ -2,7 +2,6 @@
 title: "CodeBook"
 author: "Marco Marchetti"
 date: "21 may 2017"
-output: html_document
 ---
 
 In this CodeBook there are 2 sections:  
