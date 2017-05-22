@@ -6,7 +6,7 @@
 ##
 ##  The project uses source data collected from the 
 ##  Samsung Galaxy S smartphone accelerometers
-##  and create a TidyData.csv file contains the average 
+##  and create a TidyData.txt file contains the average 
 ##  of each variable for each activity and each subject.
 ##
 ##------------------------------------------------------
@@ -113,4 +113,5 @@ combined_TidyData <- aggregate(. ~subjectId + activityType, combined_MeanStd, me
 combined_TidyData <- combined_TidyData[order(combined_TidyData$subjectId, combined_TidyData$activityType),]
 
 # write data set
-write.table(combined_TidyData, "TidyData.csv", row.name=FALSE, sep = ",")
+write.table(combined_TidyData, "TidyData.txt", row.name=FALSE)
+

@@ -135,10 +135,58 @@ The source data set is available at <a href="http://archive.ics.uci.edu/ml/datas
 <p>This repository contains the following files:</p>
 <ul>
 <li><p><code>README.md</code> this file, which provides an overview of the project.</p></li>
-<li><p><code>TidyData.csv</code> contains independent tidy data set with the average of each variable for each activity and each subject.</p></li>
+<li><p><code>TidyData.txt</code> contains independent tidy data set with the average of each variable for each activity and each subject.</p></li>
 <li><p><code>run_analysis.R</code> R script that was used to create the Tidy data set</p></li>
 <li><p><code>CodeBook.md</code> describes how to use all this, variables, data, and any transformations performed to clean up the data.</p></li>
 </ul>
+</div>
+<div id="how-the-script-works" class="section level2">
+<h2>How the Script works</h2>
+<p>Tidy Data set is created by running <code>run_analysis.R</code> on the UCI HAR Dataset.<br />
+The R script executes both the <strong>Data Collection</strong> and the <strong>Tidy data Creation</strong> steps.</p>
+<div id="data-collection" class="section level3">
+<h3>Data Collection</h3>
+<p>The UCI HAR Dataset set is available at <a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones">UCI Machine Learning Repository</a></p>
+<p>Data collection steps:</p>
+<ol style="list-style-type: decimal">
+<li><code>data</code> directory creation</li>
+<li>Download into the data directory the <a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">Zipped UCI HAR Dataset</a> as <code>Dataset.zip</code><br />
+</li>
+<li>Unzip <code>Dataset.zip</code> into <code>data\UCI HAR Dataset</code></li>
+</ol>
+</div>
+<div id="tidy-data-creation" class="section level3">
+<h3>Tidy data Creation</h3>
+<p>Tidy data creation steps:</p>
+<p>MERGES THE TRAINING AND THE TEST SETS TO CREATE ONE DATA SET</p>
+<ol style="list-style-type: decimal">
+<li>Read features and activity labels</li>
+<li>Read train data (7352 rows)</li>
+<li>Read test data (2947 rows)</li>
+<li>Merge train and test data into a combined data set.</li>
+</ol>
+<p>EXTRACTS ONLY THE MEASUREMENTS ON THE MEAN AND STANDARD DEVIATION FOR EACH MEASUREMENT</p>
+<ol style="list-style-type: decimal">
+<li>Create a logical vector (subjectId, activityId, mean and standard deviation columns)</li>
+<li>Using the logical vector to subset the combined data set.</li>
+</ol>
+<p>USES DESCRIPTIVE ACTIVITY NAMES TO NAME THE ACTIVITIES IN THE DATA SET</p>
+<ol style="list-style-type: decimal">
+<li>Merge the combined data (only mean and std) with activity labels by activityId.</li>
+</ol>
+<p>APPROPRIATELY LABELS THE DATA SET WITH DESCRIPTIVE ACTIVITY NAMES</p>
+<ol style="list-style-type: decimal">
+<li>Cleanup variable names and labels the combined data set</li>
+</ol>
+<p>CREATES A SECOND, INDEPENDENT TIDY DATA SET WITH THE AVERAGE OF EACH VARIABLE FOR EACH ACTIVITY AND EACH SUBJECT</p>
+<ol style="list-style-type: decimal">
+<li>Aggregate the combined data set with average of each variable for each activity and each subject</li>
+<li>Order the combined data set</li>
+<li>Write data set (<code>TidyData.txt</code>) in the root project directory.</li>
+</ol>
+<p><code>run_analysis.R</code> script using R version 3.3.3 on Windows 8.1 64-bit edition.<br />
+The script requires the dplyr package (version 0.4.3).</p>
+</div>
 </div>
 
 
